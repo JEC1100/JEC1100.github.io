@@ -41,3 +41,7 @@ So I can remember what I took down
 ![Notes app home page mockup](images/notes-home-page-mock-up.png)
 ![Notes app note page mockup](images/notes-note-page-mock-up.png)
 
+### Domain
+
+<img src="images/domain.png" width="700">
+
