@@ -8,6 +8,10 @@ body {
   background: linear-gradient(to top right, rgb(0, 3, 177), rgb(241, 91, 21));
   min-height: 100vh;
 }
+/* textarea:focus {
+  box-shadow: hotpink 30px 30px;
+
+} */
 
 container {
   display: flex;
@@ -16,6 +20,17 @@ container {
 
 .note-div {
   margin-bottom: 50px;
+  max-width: 35vw;
+  max-height: 20px;
+  overflow: hidden;
+  transition: all 1s ease-out;
+  cursor: pointer;
+}
+
+.note-div.expand {
+  max-height: 100vh;
+  min-height: 20px;
+  transition: all 1s ease-out;
 }
 
 #heading {
@@ -34,28 +49,31 @@ container {
 }
 
 #text-input {
+  resize: none;
   width: 100%;
   height: 40vh;
   color: black;
   border: 1px solid black;
+  box-shadow: black 7px 7px 40px;
   border-radius: 5px;
   padding: 10px;
   font-size: 20px;
 }
 
 #create {
-  margin-top: 5px;
-  display: block;
-  color: black;
-  background: white;
-  border: 1px solid black;
-  float: right;
+  margin-top: 40px;
+  padding: 10px;
+  float: inline-end;
+  color: white;
+  background: transparent;
+  border:2px solid white;
   font-size: 18px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 #create:active {
-  margin: 6px;
+  top: 5px;
   font-size: 17px;
   box-shadow: 0px 0px 10px rgb(255, 115, 0);
 }
