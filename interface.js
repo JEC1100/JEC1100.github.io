@@ -3,12 +3,17 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  
   let notesArray = localStorage.getItem('notes')
   ? JSON.parse(localStorage.getItem('notes'))
   : [];
 
   localStorage.setItem('notes', JSON.stringify(notesArray))
   const data = JSON.parse(localStorage.getItem('notes'));
+
+  data.forEach((item) => {
+    createNewDiv(item)
+  })
 
   function createNewDiv(note) {
     const div = document.createElement('div');
