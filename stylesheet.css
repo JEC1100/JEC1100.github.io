@@ -8,10 +8,6 @@ body {
   background: linear-gradient(to top right, rgb(0, 3, 177), rgb(241, 91, 21));
   min-height: 100vh;
 }
-/* textarea:focus {
-  box-shadow: hotpink 30px 30px;
-
-} */
 
 container {
   display: flex;
@@ -25,12 +21,13 @@ container {
   overflow: hidden;
   transition: all 1s ease-out;
   cursor: pointer;
+  overflow-wrap: break-word;
 }
 
 .note-div.expand {
   max-height: 100vh;
   min-height: 20px;
-  transition: all 1s ease-out;
+  transition: all 5s ease-out;
 }
 
 #heading {
@@ -61,12 +58,12 @@ container {
 }
 
 #create {
-  margin-top: 40px;
-  padding: 10px;
-  float: inline-end;
-  color: white;
-  background: transparent;
-  border:2px solid white;
+  margin-top: 5px;
+  display: block;
+  color: black;
+  background: white;
+  border: 0px;
+  float: right;
   font-size: 18px;
   border-radius: 3px;
   cursor: pointer;
