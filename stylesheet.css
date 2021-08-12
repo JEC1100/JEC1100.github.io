@@ -16,6 +16,18 @@ container {
 
 .note-div {
   margin-bottom: 50px;
+  max-width: 35vw;
+  max-height: 20px;
+  overflow: hidden;
+  transition: all 1s ease-out;
+  cursor: pointer;
+  overflow-wrap: break-word;
+}
+
+.note-div.expand {
+  max-height: 100vh;
+  min-height: 20px;
+  transition: all 5s ease-out;
 }
 
 #heading {
@@ -34,6 +46,7 @@ container {
 }
 
 #text-input {
+  box-shadow: black 7px 7px 40px;
   width: 97%;
   height: 40vh;
   color: black;
@@ -54,10 +67,11 @@ container {
   float: right;
   font-size: 18px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 #create:active {
-  margin: 6px;
+  top: 5px;
   font-size: 17px;
   box-shadow: 0px 0px 10px rgb(255, 115, 0);
 }
