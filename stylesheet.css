@@ -6,7 +6,7 @@
 
 body {
   background: linear-gradient(to top right, rgb(0, 3, 177), rgb(241, 91, 21));
-  min-height: 100vh;
+  min-height: 93vh;
 }
 
 container {
@@ -34,13 +34,15 @@ container {
 }
 
 #text-input {
-  width: 100%;
+  width: 97%;
   height: 40vh;
   color: black;
-  border: 1px solid black;
+  border: 1px solid rgb(57, 18, 129);
   border-radius: 5px;
   padding: 10px;
   font-size: 20px;
+  resize: none;
+  outline: none;
 }
 
 #create {
@@ -48,7 +50,7 @@ container {
   display: block;
   color: black;
   background: white;
-  border: 1px solid black;
+  border: 0px;
   float: right;
   font-size: 18px;
   border-radius: 3px;
@@ -63,4 +65,14 @@ container {
 #right-side {
   padding: 50px;
   width: 50vw;
+}
+
+@media screen and (max-width: 768px) {
+  container {
+    flex-direction: column;
+  }
+
+  #left-side, #right-side {
+    width: 77vw;
+  }
 }
