@@ -20,11 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
     div.className = 'note-div';
     div.innerText = note.title + "...";
     document.getElementById('right-side').appendChild(div);
-    div.addEventListener('click', () => {
-    div.classList.toggle('expand');
-    div.innerText = note.text;
-    });
+    listenForClick(div, note)
   };
+
+  function listenForClick(div, note) {
+    div.addEventListener('click', () => {
+      if(div.innerText == note.text) {
+        div.innerText = note.title + '...';
+      } else {
+        div.innerText = note.text;
+      }
+    })
+  }
   
   function createNoteFromText() {
     const text = document.querySelector('#text-input').value
@@ -42,6 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector('#text-input').value = "";
     });
   };
+
+
+
+
+
+
+
+
+
+  
   document.querySelector('#create').addEventListener('click', () => {
     createNoteFromText();
   });
