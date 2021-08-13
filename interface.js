@@ -45,5 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector('#create').addEventListener('click', () => {
     createNoteFromText();
   });
+  document.querySelector('#clear').addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
+  })
 });
 
