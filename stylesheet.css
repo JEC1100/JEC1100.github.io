@@ -15,20 +15,21 @@ container {
 }
 
 .note-div {
+  opacity:1;
   margin-bottom: 50px;
   max-width: 35vw;
   /* max-height: 20px; */
   /* overflow: hidden; */
-  /* transition: all 1s ease-out; */
+  transition: all 1s ease-out;
   cursor: pointer;
   /* overflow-wrap: break-word; */
 }
 
-/* .note-div.expand {
-  max-height: 100vh;
-  min-height: 20px;
-  transition: all 5s ease-out;
-} */
+.note-div.hide {
+ opacity:0;
+}
+
+
 
 #heading {
   margin: 50px 50px 0px 50px;

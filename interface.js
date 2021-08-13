@@ -25,10 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function listenForClick(div, note) {
     div.addEventListener('click', () => {
-      if(div.innerText == note.text) {
+      div.classList.toggle('hide');
+      if (div.innerText == note.text){
+       setTimeout(function() {
         div.innerText = note.title + '...';
+        div.classList.toggle('hide');
+       }, 1000);
       } else {
-        div.innerText = note.text;
+        setTimeout(function() {
+          div.innerText = note.text;
+          div.classList.toggle('hide');
+         }, 1000);
       }
     })
   }
@@ -58,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  
+
   document.querySelector('#create').addEventListener('click', () => {
     createNoteFromText();
   });
