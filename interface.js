@@ -1,9 +1,6 @@
 "use strict";
 
-
 document.addEventListener("DOMContentLoaded", () => {
-
-  
   let notesArray = localStorage.getItem('notes')
   ? JSON.parse(localStorage.getItem('notes'))
   : [];
@@ -42,27 +39,33 @@ document.addEventListener("DOMContentLoaded", () => {
   
   function createNoteFromText() {
     const text = document.querySelector('#text-input').value
-    fetch("https://makers-emojify.herokuapp.com/", {
-      method: "POST",
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({text: text})
-    }).then((response) => {
-      return response.json()
-    }).then((json) => {
-      const note = new Note(json.emojified_text);
-      notesArray.push(note);
-      localStorage.setItem('notes', JSON.stringify(notesArray));
-      createNewDiv(note);
-      document.querySelector('#text-input').value = "";
-    });
+    try {
+      if(text == "") throw 'Cannot create empty note.';
+      fetch("https://makers-emojify.herokuapp.com/", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({text: text})
+      }).then((response) => {
+        return response.json()
+      }).then((json) => {
+        const note = new Note(json.emojified_text);
+        notesArray.push(note);
+        localStorage.setItem('notes', JSON.stringify(notesArray));
+        createNewDiv(note);
+        document.querySelector('#text-input').value = "";
+        document.querySelector('#text-input').placeholder = "";
+      })
+    } catch(error) {
+      document.getElementById('text-input').placeholder = error
+    }
   };
 
   document.querySelector('#create').addEventListener('click', () => {
     createNoteFromText();
   });
+
   document.querySelector('#clear').addEventListener('click', () => {
     localStorage.clear();
     location.reload();
   })
 });
-
