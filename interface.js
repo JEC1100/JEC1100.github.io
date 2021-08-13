@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ? JSON.parse(localStorage.getItem('notes'))
   : [];
 
-  localStorage.setItem('notes', JSON.stringify(notesArray))
+  localStorage.setItem('notes', JSON.stringify(notesArray));
   const data = JSON.parse(localStorage.getItem('notes'));
 
   data.forEach((item) => {
-    createNewDiv(item)
+    createNewDiv(item);
   })
 
   function createNewDiv(note) {
@@ -20,9 +20,23 @@ document.addEventListener("DOMContentLoaded", () => {
     div.className = 'note-div';
     div.innerText = note.title + "...";
     document.getElementById('right-side').appendChild(div);
+    listenForClick(div, note)
+  };
+
+  function listenForClick(div, note) {
     div.addEventListener('click', () => {
-    div.classList.toggle('expand');
-    div.innerText = note.text;
+      div.classList.toggle('hide');
+      if (div.innerText == note.text){
+       setTimeout(function() {
+        div.innerText = note.title + '...';
+        div.classList.toggle('hide');
+       }, 700);
+      } else {
+        setTimeout(function() {
+          div.innerText = note.text;
+          div.classList.toggle('hide');
+         }, 700);
+      };
     });
   };
   
@@ -42,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector('#text-input').value = "";
     });
   };
+
   document.querySelector('#create').addEventListener('click', () => {
     createNoteFromText();
   });

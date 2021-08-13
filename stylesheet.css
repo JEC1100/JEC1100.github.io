@@ -6,7 +6,7 @@
 
 body {
   background: linear-gradient(to top right, rgb(0, 3, 177), rgb(241, 91, 21));
-  min-height: 93vh;
+  min-height: 100vh;
 }
 
 container {
@@ -15,19 +15,15 @@ container {
 }
 
 .note-div {
+  opacity:1;
   margin-bottom: 50px;
   max-width: 35vw;
-  max-height: 20px;
-  overflow: hidden;
-  transition: all 1s ease-out;
+  transition: all 0.7s ease-out;
   cursor: pointer;
-  overflow-wrap: break-word;
 }
 
-.note-div.expand {
-  max-height: 100vh;
-  min-height: 20px;
-  transition: all 5s ease-out;
+.note-div.hide {
+ opacity:0;
 }
 
 #heading {
