@@ -18,11 +18,8 @@ container {
   opacity:1;
   margin-bottom: 50px;
   max-width: 35vw;
-  /* max-height: 20px; */
-  /* overflow: hidden; */
-  transition: all 1s ease-out;
+  transition: all 0.7s ease-out;
   cursor: pointer;
-  /* overflow-wrap: break-word; */
 }
 
 .note-div.hide {

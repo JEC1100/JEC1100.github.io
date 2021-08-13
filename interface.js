@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ? JSON.parse(localStorage.getItem('notes'))
   : [];
 
-  localStorage.setItem('notes', JSON.stringify(notesArray))
+  localStorage.setItem('notes', JSON.stringify(notesArray));
   const data = JSON.parse(localStorage.getItem('notes'));
 
   data.forEach((item) => {
-    createNewDiv(item)
+    createNewDiv(item);
   })
 
   function createNewDiv(note) {
@@ -30,15 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
        setTimeout(function() {
         div.innerText = note.title + '...';
         div.classList.toggle('hide');
-       }, 1000);
+       }, 700);
       } else {
         setTimeout(function() {
           div.innerText = note.text;
           div.classList.toggle('hide');
-         }, 1000);
-      }
-    })
-  }
+         }, 700);
+      };
+    });
+  };
   
   function createNoteFromText() {
     const text = document.querySelector('#text-input').value
@@ -56,15 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector('#text-input').value = "";
     });
   };
-
-
-
-
-
-
-
-
-
 
   document.querySelector('#create').addEventListener('click', () => {
     createNoteFromText();
