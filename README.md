@@ -4,6 +4,14 @@
 
 Write a frontend, single page app using only pure JavaScript (further JS)
 
+## Concepts Covered
+* Frontend, single page web apps.
+* Events and event handlers.
+* Manipulating the Document Object Model (DOM).
+* Asynchronous requests.
+* Frontend templating.
+* Frontend routing.
+
 ## Planning
 
 ### User Stories
