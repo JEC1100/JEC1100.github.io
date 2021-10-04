@@ -1,5 +1,9 @@
 # notes_app
 
+## Project Goal
+
+Write a frontend, single page app using only pure JavaScript (further JS)
+
 ## Planning
 
 ### User Stories
